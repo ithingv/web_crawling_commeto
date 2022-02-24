@@ -201,7 +201,6 @@ except RequestException as e:
 ### 파이썬 가상환경 장단점 비교
 
 - [파이썬 가상환경은 왜 이렇게 다양하고, 개발자들은 왜 이렇게 다양한 가상환경을 만들었을까?](https://equus3144.medium.com/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD%EC%9D%80-%EC%99%9C-%EC%9D%B4%EB%A0%87%EA%B2%8C-%EB%8B%A4%EC%96%91%ED%95%98%EA%B3%A0-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%93%A4%EC%9D%80-%EC%99%9C-%EC%9D%B4%EB%A0%87%EA%B2%8C-%EB%8B%A4%EC%96%91%ED%95%9C-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD%EC%9D%84-%EB%A7%8C%EB%93%A4%EC%97%88%EC%9D%84%EA%B9%8C-8173992f28e2)
-
 - [poetry 설치 및 사용기](https://velog.io/@matisse/Poetry-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%82%AC%EC%9A%A9%EA%B8%B0)
 
 ---
