@@ -35,7 +35,7 @@ def crawler(url: str) -> List:
         article_info_dict["price"] = info.select("a > div.card-desc > div.card-price")[0].text.strip()
         article_info_dict["region_name"] = info.select("a > div.card-desc > div.card-region-name")[0].text.strip()
         article_info_dict["interest"] = info.select("a > div.card-desc > div.card-counts")[0].text.split()[1]
-        article_info_dict["comment_count"] = info.select("a > div.card-desc > div.card-counts")[0].text.split()[-1]
+        article_info_dict["chatting"] = info.select("a > div.card-desc > div.card-counts")[0].text.split()[-1]
         article_info_dict["img_url"] = info.select("a > div.card-photo > img")[0]["src"]
         article_info_list.append(article_info_dict)
 
