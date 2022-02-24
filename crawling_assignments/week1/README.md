@@ -164,11 +164,11 @@ except TimeoutError:
 # timeout 제한 추가
 # 이 경우에 예외를 어떻게 전달해야할지 결정하기가 어려웠습니다..
 try:
-		req = requests.get(url, timeout=5.0)
+    req = requests.get(url, timeout=5.0)
 except (HTTPError, ConnectionError, TimeoutError) as e:
-		1. raise ??
-		2. return None
-		3. print(f"Error occured: {e}") 
+    1. raise ??
+    2. return None
+    3. print(f"Error occured: {e}") 
 ```
 
 ---
