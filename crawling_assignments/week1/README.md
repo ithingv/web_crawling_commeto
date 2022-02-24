@@ -2,21 +2,21 @@
 
 ### 당근마켓 중고상품정보 크롤링 
 
-- 타겟 URL: https://www.daangn.com/hot_articles
-- 과제 요구사항
+- **타겟 URL: https://www.daangn.com/hot_articles**
+- **과제 요구사항**
 
-    - HTTP 통신을 위해 [requests](https://docs.python-requests.org/en/latest/) 라이브러리를 설치한다.
+    - **HTTP 통신을 위해 [requests](https://docs.python-requests.org/en/latest/) 라이브러리를 설치한다.**
         
         ```
         pip install requests
         ```
 
-    - 원하는 정보를 `Parsing` 하기 위해 [Beautifulsoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) 라이브러리를 설치한다.  
+    - **원하는 정보를 `Parsing` 하기 위해 [Beautifulsoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) 라이브러리를 설치한다.**  
 
         ```
         pip install beautifulsoup4
         ```
-    - 당근마켓 서버에 `GET` 요청을 보내 중고상품정보를 전달받는다.
+    - **당근마켓 서버에 `GET` 요청을 보내 중고상품정보를 전달받는다.**
     
         먼저 간단하게 http 테스트를 위해 `httpie`를 설치하여 Target URL에 `GET` 요청을 보낸 후 응답메세지를 확인해보자
         
@@ -33,7 +33,7 @@
 
         HTTP 메시지 구조에 대한 자세한 설명은 https://developer.mozilla.org/ko/docs/Web/HTTP/Messages 를 참고하자
 
-    - 중고상품 페이지를 크롤링할때  로그인은 필요없으므로 `GET` 요청만 보내면 정보를 받아올 수 있다.
+    - **중고상품 페이지를 크롤링할때  로그인은 필요없으므로 `GET` 요청만 보내면 정보를 받아올 수 있다.**
 
         ```
         webpage = requests.get("https://www.daangn.com/hot_articles")
@@ -49,7 +49,7 @@
         
         References: [Python requests.Response Object](https://www.w3schools.com/python/ref_requests_response.asp), [Response content](https://docs.python-requests.org/en/latest/user/quickstart/)
 
-    - 서버로부터 응답받은 `webpage` 객체와 `html.parser` 를 사용해 Beautifulsoup 객체를 생성한다.
+    - **서버로부터 응답받은 `webpage` 객체와 `html.parser` 를 사용해 Beautifulsoup 객체를 생성한다.**
 
         ```python
         soup = BeautifulSoup(webpage.content, "html.parser")
@@ -65,7 +65,7 @@
         b'<!DOCTYPE html>\n<html lang="ko">\n<head>\n  <meta charset="utf-8">\n  <meta http-equiv="X-UA-Compatible" content="IE=edge">\n  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
         ```
 
-    - `BeautifulSoup`에는 [SoupSieve](https://facelessuser.github.io/soupsieve/) 패키지를 사용하여 구문 분석된 문서에 대해 `CSS Selector`를 실행하고 일치하는 모든 요소를 반환하는 `select` 메서드를 사용할 수 있다.
+    - **`BeautifulSoup`에는 [SoupSieve](https://facelessuser.github.io/soupsieve/) 패키지를 사용하여 구문 분석된 문서에 대해 `CSS Selector`를 실행하고 일치하는 모든 요소를 반환하는 `select` 메서드를 사용할 수 있다.**
 
         ```python
         # 사용예시
@@ -103,7 +103,7 @@
 
         ```
 
-    - `cards-wrap` 태그 아래의 모든 `article` 을 가져오고 반환된 `getItem` 은 `iterable`한 list 이므로 반복문을 통해 `Tag` 객체의 `.select()`를 사용해 원하는 정보를 `Parsing` 할 수 있다. 
+    - **`cards-wrap` 태그 아래의 모든 `article` 을 가져오고 반환된 `getItem` 은 `iterable`한 list 이므로 반복문을 통해 `Tag` 객체의 `.select()`를 사용해 원하는 정보를 `Parsing` 할 수 있다.** 
 
         ```python
         # article 정보를 담을 리스트
