@@ -51,7 +51,7 @@
 
     - 서버로부터 응답받은 `webpage` 객체와 `html.parser` 를 사용해 Beautifulsoup 객체를 생성한다.
 
-        ```
+        ```python
         soup = BeautifulSoup(webpage.content, "html.parser")
         ```
 
@@ -59,7 +59,7 @@
         
         <br>
 
-        ```
+        ```python
         print(webpage.content)
         
         b'<!DOCTYPE html>\n<html lang="ko">\n<head>\n  <meta charset="utf-8">\n  <meta http-equiv="X-UA-Compatible" content="IE=edge">\n  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -67,7 +67,7 @@
 
     - `BeautifulSoup`에는 [SoupSieve](https://facelessuser.github.io/soupsieve/) 패키지를 사용하여 구문 분석된 문서에 대해 `CSS Selector`를 실행하고 일치하는 모든 요소를 반환하는 `select` 메서드를 사용할 수 있다.
 
-        ```
+        ```python
         # 사용예시
         soup.select("title")
         # [<title>The Dormouse's story</title>]
@@ -81,7 +81,7 @@
         
         <br>
 
-        ```
+        ```python
         # tag 객체 사용예시
         
         soup = BeautifulSoup('<b class="boldest">Extremely bold</b>', 'html.parser')
@@ -105,7 +105,7 @@
 
     - `cards-wrap` 태그 아래의 모든 `article` 을 가져오고 반환된 `getItem` 은 `iterable`한 list 이므로 반복문을 통해 `Tag` 객체의 `.select()`를 사용해 원하는 정보를 `Parsing` 할 수 있다. 
 
-        ```
+        ```python
         # article 정보를 담을 리스트
         article_info_list = []
 
