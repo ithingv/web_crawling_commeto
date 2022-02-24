@@ -226,6 +226,10 @@ except RequestException as e:
 ---
 ### 많은 이미지 데이터를 수집할 수 있다면 머신러닝 모델을 통해 간단한 서비스를 만들어보고 싶다.
 
+   <div align='center' style="margin: 30px 0">
+        <img src='./static/image/img_week1_6.png'/>
+    </div>
+
 -  기업마다 머신러닝 모델을 서빙하는 파이프라인을 어떻게 구축하는지 테크블로그를 보면서 앞으로의 공부 방향을 설정하고 있는데 [당근마켓의 테크블로그](https://medium.com/daangn/machine-learning/home)에는 이미지, 텍스트, 추천서비스등 다양한 머신러닝 서비스를 사용자들에게 제공하고 있다.
 
 - 앞으로 수집하게 될 다양한 포맷을 핸들링하는 방법을 배우고 머신러닝 모델을 학습하고 배포하는 연습을 해보려한다.
