@@ -139,6 +139,7 @@
 - [HTTP 메시지](https://developer.mozilla.org/ko/docs/Web/HTTP/Messages)
 - 당근마켓에서 받아온 메시지 정보도 자세히 분석해봐야겠다.
 
+---
 ### request exception handling
 
 [requests.exceptions](https://docs.python-requests.org/en/master/_modules/requests/exceptions/)의 소스코드를 보면 서버에 요청을 보낼 때 발생할 수 있는 다양한 에러가 구현돼있다. 이 많은 Exception들을 모두 코드에 적으면 코드가 길어지고 가독성이 떨어지는 것 같아 멘토님께 질문을 드렸는데 궁금한 내용을 명쾌하게 답변해주셨다! 처음부터 모든 상황을 다 고려하기보다는 포괄적으로 핸들링할 수 있는 코드를 생각해보고 문제가 발생했을 때 빠르게 대처하는 방법을 사용한다고 한다.
@@ -189,12 +190,14 @@ except RequestException as e:
 </div>
 
 ---
+
 ### html.parser 외의 구문분석기
 - [html.parser](https://docs.python.org/ko/3/library/html.parser.html)
 - [Parsing XML and HTML with lxml](https://lxml.de/parsing.html)
 - [html5lib Parser](https://lxml.de/html5parser.html)
 
 ---
+
 ### 파이썬 가상환경 장단점 비교
 
 - [파이썬 가상환경은 왜 이렇게 다양하고, 개발자들은 왜 이렇게 다양한 가상환경을 만들었을까?](https://equus3144.medium.com/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD%EC%9D%80-%EC%99%9C-%EC%9D%B4%EB%A0%87%EA%B2%8C-%EB%8B%A4%EC%96%91%ED%95%98%EA%B3%A0-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%93%A4%EC%9D%80-%EC%99%9C-%EC%9D%B4%EB%A0%87%EA%B2%8C-%EB%8B%A4%EC%96%91%ED%95%9C-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD%EC%9D%84-%EB%A7%8C%EB%93%A4%EC%97%88%EC%9D%84%EA%B9%8C-8173992f28e2)
