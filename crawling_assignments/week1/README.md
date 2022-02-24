@@ -209,6 +209,11 @@ except RequestException as e:
 - Flask를 사용하다보면 클라이언트로 받아온 정보, 예를들어 `request.json`을 사용하여 비즈니스 로직을 처리했었는데 이번에는 `requests`를 사용하여 서버에서 서버로 요청을 보내는 구조를 생각해보았다. 사실 브라우저인 (척)을 하는 서버를 사용했을 뿐이다...  
 
 - [데코레이터](./util/calc.py)를 사용해 서버로부터 응답을 받아 원하는 정보를 파싱한 데이터를 반환하는 [cralwer](./crawler.py) 함수의 실행 시간을 기록하였다
+
+    <div align='center' style="margin: 30px 0">
+        <img src='./static/image/img_week1_5.png'/>
+    </div>
+
 - 간단하게 서버와 데이터베이스를 연결하고 수집한 데이터를 핸들링해보는 연습을 해보려한다.
 
 ---
