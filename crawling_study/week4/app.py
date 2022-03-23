@@ -17,6 +17,11 @@ time.sleep(5)
 html = driver.page_source
 soup = BeautifulSoup(html, 'lxml')
 
+urls = []
+
+
+
+
 with open("result.txt", "w", encoding='utf-8') as f:
     print(soup)
     f.write(str(soup))
