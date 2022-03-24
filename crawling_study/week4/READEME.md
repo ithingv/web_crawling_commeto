@@ -1,5 +1,6 @@
 
 ### 메인 페이지
+https://seekingalpha.com/earnings/earnings-call-transcripts
 
 <img src="./seekingalpha/main_page.png"></img>
 
