@@ -12,6 +12,7 @@ import pytz
 import os
 from collections import defaultdict
 
+
 def convert_datetime(s):
     #https://twpower.github.io/29-iso8601-utc-and-python-example
     #https://stackoverflow.com/questions/28949911/what-does-this-format-means-t000000-000z
@@ -55,22 +56,28 @@ def get_post(driver):
     info = {}
 
     try:
-        info["contents"] = soup.select('div.MOdxS > span')[0].text,
+        contents = soup.select('div.MOdxS > span')[0].text,
     except:
-        info["contents"] = None
+        contents = None
     try:
-        info["tags"] = clean_hashtag(soup.select('div.MOdxS > span')[0].text),
+        tags = clean_hashtag(soup.select('div.MOdxS > span')[0].text),
     except:
-        info["tags"] = None
+        tags = None
     try:
         # like가 0일 수는 있다.
-        info["like"] = soup.select("div._7UhW9.xLCgt.qyrsm.KV-D4.fDxYl.T0kll > span")[0].text,
+        like = soup.select("div._7UhW9.xLCgt.qyrsm.KV-D4.fDxYl.T0kll > span")[0].text,
     except:
-        info['like'] = 0
+        like = 0
     try:
-        info["created_at"] = convert_datetime(soup.select_one("time").get("datetime"))
-    except:
-        pass
+        created_at = convert_datetime(soup.select_one("time").get("datetime"))
+    except Exception as e:
+        print(e)
+        created_at = None
+
+    info['contents'] = contents[0] if type(contents) == tuple else contents
+    info['tags'] = tags[0] if type(tags) == tuple else tags
+    info["like"] =  like[0] if type(like) == tuple else like
+    info["created_at"] = created_at
 
     print(info)
 
@@ -81,8 +88,6 @@ def move_next(driver):
     right = driver.find_element(By.CSS_SELECTOR, 'body > div.RnEpo._Yhr4 > div.Z2Inc._7c9RR > div > div.l8mY4.feth3 > button')
     right.click()
     time.sleep(4)
-
-
 
 s = Service(ChromeDriverManager().install())
 o = webdriver.ChromeOptions()
@@ -139,7 +144,6 @@ max_post = 50
 result = []
 
 for i in range(max_post):
-    print(i+1)
     data = get_post(driver)
     result.append(data)
     move_next(driver)
@@ -149,5 +153,17 @@ time.sleep(5)
 # pandas
 
 df = pd.DataFrame(result)
-df.to_csv("./instragram_data")
+print(df)
+df.to_csv("./insta_data")
+
+
+# mysql
+
+# title
+# tags
+# content
+# created_at
+# L1 = ['hel-lo', 'world', 'bye', 'python']
+# values = [[item] for item in L1]
+# cursor.executemany(u"INSERT INTO `instability`(`ap_name`) VALUES (%s)", values)
 
